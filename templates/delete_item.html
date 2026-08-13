@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="text-center">
+
+    <h2>Delete Item</h2>
+
+    <p>
+        Are you sure you want to delete
+        <strong>{{ item.title }}</strong>?
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <button class="btn btn-danger">
+            Yes, Delete
+        </button>
+
+        <a href="{% url 'my_items' %}" class="btn btn-secondary">
+            Cancel
+        </a>
+        <a href="{% url 'home' %}" class="btn btn-secondary">
+            Back to Home
+        </a>
+    </form>
+
+</div>
+
+{% endblock %}
